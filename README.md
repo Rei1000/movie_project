@@ -80,16 +80,24 @@ movie_project/
 │
 ├── main.py
 ├── movie_app.py
-├── json_storage.py
-├── csv_storage.py
-├── istorage.py
 ├── omdb_api.py
 ├── requirements.txt
-├── .env.example
-├── movies.json / movies.csv
-├── _static/
+├── .gitignore
+├── README.md
+│
+├── data/
+│   ├── movies.json
+│   └── movies.csv
+│
+├── storage/
+│   ├── json_storage.py
+│   ├── csv_storage.py
+│   └── istorage.py
+│
+├── static/
 │   ├── index_template.html
 │   └── style.css
+│
 └── ...
 ```
 

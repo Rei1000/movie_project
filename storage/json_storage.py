@@ -1,6 +1,6 @@
 import json
 import os
-from istorage import IStorage
+from storage.istorage import IStorage
 
 
 class JsonStorage(IStorage):
@@ -78,8 +78,10 @@ class JsonStorage(IStorage):
             title (str): Title of the movie to delete
         """
         data = self._load_data()
-        if title in data:
-            del data[title]
+        # Case-insensitive title matching
+        title_map = {k.lower(): k for k in data.keys()}
+        if title.lower() in title_map:
+            del data[title_map[title.lower()]]
             self._save_data(data)
 
     def update_movie(self, title, new_rating):

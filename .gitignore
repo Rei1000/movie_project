@@ -1,4 +1,4 @@
-# Umgebungsvariablen
+# Environment variables
 .env
 
 # Python
@@ -19,9 +19,13 @@ ENV/
 .AppleDouble
 .LSOverride
 
-# Datenbanken und lokale Dateien
-*.db
-*.sqlite3
+# Data files (optional: ignore backups or temp files in data/)
+data/*.db
+data/*.sqlite3
 
 # Logs
 *.log
+
+# Ignore generated website files (optional, falls du index.html/style.css nicht versionieren willst)
+# index.html
+# style.css

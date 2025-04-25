@@ -1,5 +1,3 @@
-import os
-os.makedirs("_static", exist_ok=True)
 import random
 from omdb_api import fetch_movie_from_api
 
@@ -166,17 +164,17 @@ class MovieApp:
 
         # Load the template file
         try:
-            with open("_static/index_template.html", "r") as file:
+            with open("static/index_template.html", "r") as file:
                 template = file.read()
         except FileNotFoundError:
-            print("Template file not found in _static directory.")
+            print("Template file not found in static directory.")
             return
 
         # Copy the CSS file to the main directory
         try:
-            shutil.copy2("_static/style.css", "style.css")
+            shutil.copy2("static/style.css", "style.css")
         except FileNotFoundError:
-            print("Style file not found in _static directory.")
+            print("Style file not found in static directory.")
             return
         except Exception as e:
             print(f"Error copying CSS file: {str(e)}")

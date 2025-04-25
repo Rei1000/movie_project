@@ -1,6 +1,6 @@
 import csv
 import os
-from istorage import IStorage
+from storage.istorage import IStorage
 
 
 class CsvStorage(IStorage):
@@ -70,13 +70,16 @@ class CsvStorage(IStorage):
             title (str): Title of the movie to delete
         """
         movies = self.list_movies()
-        if title in movies:
-            del movies[title]
+        # Case-insensitive title matching
+        title_map = {k.lower(): k for k in movies.keys()}
+        if title.lower() in title_map:
+            del movies[title_map[title.lower()]]
             with open(self.file_path, mode='w', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow(["title", "rating", "year", "poster"])
                 for t, details in movies.items():
                     writer.writerow([t, details["rating"], details["year"], details["poster"]])
+
     def update_movie(self, title, new_rating):
         """
         Updates the rating of a movie in the CSV file.

@@ -29,3 +29,6 @@ data/*.sqlite3
 # Ignore generated website files (optional, falls du index.html/style.css nicht versionieren willst)
 # index.html
 # style.css
+
+# VSCode
+.vscode/

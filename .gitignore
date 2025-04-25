@@ -1,0 +1,27 @@
+# Umgebungsvariablen
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+ENV/
+
+# PyCharm
+.idea/
+.idea_modules/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Datenbanken und lokale Dateien
+*.db
+*.sqlite3
+
+# Logs
+*.log
